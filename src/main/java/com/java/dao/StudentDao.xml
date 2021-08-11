@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.java.dao.StudentDao">
+    <select id="selectStudents" resultType="com.java.domain.Student">
+        select sno,sname,addr,phone,sex,remark from student
+    </select>
+    <insert id="insertStudent">
+        insert into student(sname,addr,phone,sex,remark) value (#{sname},#{addr},#{phone},#{sex},#{remark})
+    </insert>
+    <update id="updateStudent">
+        update student set sname=#{sname},addr=#{addr},phone=#{phone},sex=#{sex},remark=#{remark} where sno=#{sno}
+    </update>
+    <delete id="deleteStudent">
+        delete from student where sno=#{sno}
+    </delete>
+</mapper>
